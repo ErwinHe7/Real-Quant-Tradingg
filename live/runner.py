@@ -78,11 +78,42 @@ def _build_strategy(strategy_name: str, symbols: tuple[str, ...]):
     return strategy_fn
 
 
-def _build_broker(broker_name: str, state_root: Path):
+def _build_broker(broker_name: str, state_root: Path, symbols: tuple[str, ...] | None = None):
     """Build the requested broker."""
     if broker_name == "paper":
         from live.broker.paper import PaperBroker
-        return PaperBroker(state_root=state_root)
+        # Wire up cached prices so the broker uses real last-close prices
+        price_feed = None
+        adv_feed = None
+        if symbols:
+            try:
+                from research_harness.data_store import load_prices_wide
+                from pathlib import Path as _Path
+                _cache = _Path("data/cache")
+                _close = load_prices_wide(symbols, "2020-01-01", None, field="adj_close", cache_root=_cache)
+                _vol = load_prices_wide(symbols, "2020-01-01", None, field="volume", cache_root=_cache)
+                _last_close = _close.iloc[-1].to_dict() if not _close.empty else {}
+                _last_vol = _vol.iloc[-1].to_dict() if not _vol.empty else {}
+                _last_high = load_prices_wide(symbols, "2020-01-01", None, field="high", cache_root=_cache).iloc[-1].to_dict() if not _close.empty else {}
+                _last_low = load_prices_wide(symbols, "2020-01-01", None, field="low", cache_root=_cache).iloc[-1].to_dict() if not _close.empty else {}
+                _adv = {s: float(_vol[s].rolling(20).mean().iloc[-1]) * float(_last_close.get(s, 100.0)) for s in symbols if s in _vol.columns}
+
+                def price_feed(symbol: str) -> dict:
+                    p = _last_close.get(symbol, 100.0)
+                    return {
+                        "open": p, "high": _last_high.get(symbol, p * 1.01),
+                        "low": _last_low.get(symbol, p * 0.99),
+                        "close": p, "volume": _last_vol.get(symbol, 1e6),
+                    }
+
+                def adv_feed(symbol: str) -> float:
+                    return _adv.get(symbol, 1e7)
+
+                logger.info("PaperBroker: using cached last-close prices (%d symbols)", len(_last_close))
+            except Exception as exc:
+                logger.warning("Could not load cached prices for PaperBroker: %s — using $100 stub", exc)
+
+        return PaperBroker(state_root=state_root, price_feed=price_feed, adv_feed=adv_feed)
     elif broker_name == "moomoo-paper":
         from live.broker.moomoo import MoomooBroker
         return MoomooBroker(env="paper")
@@ -116,7 +147,7 @@ def main(argv=None) -> int:
 
     # Build components
     strategy_fn = _build_strategy(args.strategy, symbols)
-    broker = _build_broker(args.broker, state_root)
+    broker = _build_broker(args.broker, state_root, symbols=symbols)
 
     from live.risk.manager import RiskManager
     from live.risk.limits import DEFAULT_LIMITS

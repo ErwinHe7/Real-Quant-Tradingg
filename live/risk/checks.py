@@ -180,8 +180,10 @@ def check_buying_power(
             reason="Account equity is zero or negative",
         )
 
+    # w is a fraction of equity — required notional = w * equity
+    # prices are not multiplied again (they are already embedded in the weight definition)
     required_cash = sum(
-        float(w) * market.prices.get(str(sym), 0.0) * account.equity_usd
+        float(w) * account.equity_usd
         for sym, w in target.items()
         if float(w) > 0
     )

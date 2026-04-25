@@ -43,7 +43,7 @@ class RiskOutcome:
 
     @property
     def any_halt(self) -> bool:
-        return any(d.is_halt or d.status == CheckStatus.REJECT for d in self.decisions)
+        return any(d.is_halt for d in self.decisions)
 
 
 class RiskManager:
@@ -239,9 +239,10 @@ class RiskManager:
                 max_gross=self._limits.max_gross_leverage,
             )
 
-        # Check if any hard reject fired
-        hard_rejects = [d for d in decisions if d.status in (CheckStatus.REJECT, CheckStatus.HALT)]
-        if hard_rejects:
+        # HALT status = kill switch or circuit breaker → stop all trading
+        # REJECT status = pre-trade check failed → weights were already adjusted above, still trade
+        halts = [d for d in decisions if d.status == CheckStatus.HALT]
+        if halts:
             mode: Literal["trade", "halt", "liquidate"] = "halt"
         else:
             mode = "trade"
