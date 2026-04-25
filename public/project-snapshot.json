@@ -8,7 +8,7 @@
     ],
     "start": "2020-01-01",
     "end": null,
-    "track": "all",
+    "track": "proposal",
     "primary_metric": "cumulative_log_wealth",
     "eg_eta": 12.0,
     "ons_beta": 1.0,
@@ -39,8 +39,8 @@
   },
   "data_summary": {
     "start": "2020-01-03",
-    "end": "2026-04-08",
-    "rows": 1573,
+    "end": "2026-04-24",
+    "rows": 1585,
     "symbols": [
       "SPY",
       "QQQ",
@@ -89,7 +89,7 @@
       "track_key": "proposal_core",
       "track_name": "Advanced Algorithms Core Benchmark",
       "primary_metric": "cumulative_log_wealth",
-      "leader": "mean_reversion",
+      "leader": "ons",
       "benchmark": "bcrp",
       "regime_method": "20-day equal-weight realized volatility above or below the sample median",
       "strategies": {
@@ -104,24 +104,24 @@
             "parameters": {}
           },
           "metrics": {
-            "final_wealth": 2.11727469052729,
-            "cumulative_return": 1.1172746905272901,
-            "cumulative_log_wealth": 0.7501297383537906,
-            "annualized_return": 0.127692330506336,
-            "sharpe": 0.9645933980091477,
-            "max_drawdown": 0.2506614586277466,
+            "final_wealth": 2.071415026328768,
+            "cumulative_return": 1.071415026328768,
+            "cumulative_log_wealth": 0.7282319613361378,
+            "annualized_return": 0.12275107456389467,
+            "sharpe": 0.9301405701468569,
+            "max_drawdown": 0.25658830008725064,
             "avg_turnover": 0.0,
             "cost_drag": 0.0,
-            "hit_rate": 0.5568976478067387,
-            "high_vol_avg_return": 0.0003219987158877005,
-            "low_vol_avg_return": 0.0006985468055215572,
+            "hit_rate": 0.5564668769716088,
+            "high_vol_avg_return": 0.00031544127245876455,
+            "low_vol_avg_return": 0.0006708185909326661,
             "regret_vs_bcrp": 0.0
           },
           "latest_weights": {
-            "SPY": 0.2541205314904443,
-            "QQQ": 0.2534920015374041,
-            "GLD": 0.2509666806690237,
-            "TLT": 0.24142078630312788
+            "SPY": 0.251107738475918,
+            "QQQ": 0.254484689929768,
+            "GLD": 0.2543673354712776,
+            "TLT": 0.24004023612303627
           }
         },
         "equal_weight": {
@@ -135,18 +135,18 @@
             "parameters": {}
           },
           "metrics": {
-            "final_wealth": 2.0884976065916243,
-            "cumulative_return": 1.0884976065916243,
-            "cumulative_log_wealth": 0.736444958960481,
-            "annualized_return": 0.12522274384841992,
-            "sharpe": 0.9535222770295032,
-            "max_drawdown": 0.2518689312074752,
-            "avg_turnover": 0.00336805522682738,
-            "cost_drag": 0.0026489754358997343,
-            "hit_rate": 0.5568976478067387,
-            "high_vol_avg_return": 0.0003147705459705918,
-            "low_vol_avg_return": 0.0006874951083143078,
-            "regret_vs_bcrp": 0.013684779393309587
+            "final_wealth": 2.03520141521948,
+            "cumulative_return": 1.03520141521948,
+            "cumulative_log_wealth": 0.710594789534631,
+            "annualized_return": 0.11960712964112075,
+            "sharpe": 0.9154315480894569,
+            "max_drawdown": 0.25791691292813457,
+            "avg_turnover": 0.003366484903442012,
+            "cost_drag": 0.0026679392859777946,
+            "hit_rate": 0.5570977917981073,
+            "high_vol_avg_return": 0.0003053571881542237,
+            "low_vol_avg_return": 0.0006575473993717173,
+            "regret_vs_bcrp": 0.017637171801506812
           },
           "latest_weights": {
             "SPY": 0.25,
@@ -168,24 +168,24 @@
             }
           },
           "metrics": {
-            "final_wealth": 2.031336994394428,
-            "cumulative_return": 1.0313369943944282,
-            "cumulative_log_wealth": 0.7086941941883822,
-            "annualized_return": 0.12023136829464565,
-            "sharpe": 0.6461423353407281,
-            "max_drawdown": 0.34991501278118275,
-            "avg_turnover": 0.013094897768988074,
-            "cost_drag": 0.010299137095309122,
-            "hit_rate": 0.5537190082644629,
-            "high_vol_avg_return": 0.00010548072064689136,
-            "low_vol_avg_return": 0.0009602225095407055,
-            "regret_vs_bcrp": 0.0414355441654084
+            "final_wealth": 2.102839484744939,
+            "cumulative_return": 1.1028394847449392,
+            "cumulative_log_wealth": 0.7432885670100633,
+            "annualized_return": 0.1254420005551784,
+            "sharpe": 0.6673000590309417,
+            "max_drawdown": 0.3574895302812834,
+            "avg_turnover": 0.013531166677898035,
+            "cost_drag": 0.010723449592234193,
+            "hit_rate": 0.5589905362776025,
+            "high_vol_avg_return": 0.00014127851486883634,
+            "low_vol_avg_return": 0.0009626577887722883,
+            "regret_vs_bcrp": -0.015056605673925527
           },
           "latest_weights": {
-            "SPY": 0.39217972497568654,
-            "QQQ": 0.5926718084814847,
-            "GLD": 0.015148443565517616,
-            "TLT": 2.2977311073014737e-08
+            "SPY": 0.007298694207786213,
+            "QQQ": 0.7640874474002237,
+            "GLD": 0.22861385689331204,
+            "TLT": 1.4986781140098584e-09
           }
         },
         "ons": {
@@ -202,24 +202,24 @@
             }
           },
           "metrics": {
-            "final_wealth": 2.387881816468569,
-            "cumulative_return": 1.387881816468569,
-            "cumulative_log_wealth": 0.8704067037146044,
-            "annualized_return": 0.14963228834699338,
-            "sharpe": 1.0002386473091764,
-            "max_drawdown": 0.27622805863077293,
-            "avg_turnover": 0.008860094596521867,
-            "cost_drag": 0.006968464400164448,
-            "hit_rate": 0.5588048315321043,
-            "high_vol_avg_return": 0.00023497218323598304,
-            "low_vol_avg_return": 0.0009537517696801961,
-            "regret_vs_bcrp": -0.12027696536081378
+            "final_wealth": 2.3534764416785707,
+            "cumulative_return": 1.3534764416785707,
+            "cumulative_log_wealth": 0.8558935718997065,
+            "annualized_return": 0.14577238082450794,
+            "sharpe": 0.9765537924864525,
+            "max_drawdown": 0.28184052568041107,
+            "avg_turnover": 0.008836168881309727,
+            "cost_drag": 0.007002663838437958,
+            "hit_rate": 0.5570977917981073,
+            "high_vol_avg_return": 0.00023217208593958905,
+            "low_vol_avg_return": 0.0009304620082783513,
+            "regret_vs_bcrp": -0.12766161056356873
           },
           "latest_weights": {
-            "SPY": 0.4796477604380533,
-            "QQQ": 0.031335240668738516,
-            "GLD": 0.4099231565352298,
-            "TLT": 0.07909384235797844
+            "SPY": 0.4303376891148818,
+            "QQQ": 0.06855631331931245,
+            "GLD": 0.44854379778352854,
+            "TLT": 0.05256219978227718
           }
         },
         "universal_portfolio": {
@@ -236,24 +236,24 @@
             }
           },
           "metrics": {
-            "final_wealth": 2.100321463450133,
-            "cumulative_return": 1.100321463450133,
-            "cumulative_log_wealth": 0.742090410847558,
-            "annualized_return": 0.12624087901382808,
-            "sharpe": 0.953358801577619,
-            "max_drawdown": 0.25548857378553025,
-            "avg_turnover": 0.0027176878422465883,
-            "cost_drag": 0.0021374614879269413,
-            "hit_rate": 0.5600762873490146,
-            "high_vol_avg_return": 0.0003018772742477681,
-            "low_vol_avg_return": 0.0007083577544107838,
-            "regret_vs_bcrp": 0.008039327506232596
+            "final_wealth": 2.0726550209325545,
+            "cumulative_return": 1.0726550209325545,
+            "cumulative_log_wealth": 0.7288304042324459,
+            "annualized_return": 0.12285790576981581,
+            "sharpe": 0.9335964607064261,
+            "max_drawdown": 0.260075311422294,
+            "avg_turnover": 0.0027286324953983416,
+            "cost_drag": 0.0021624412526031855,
+            "hit_rate": 0.5589905362776025,
+            "high_vol_avg_return": 0.0002985842237048804,
+            "low_vol_avg_return": 0.0006875381093541784,
+            "regret_vs_bcrp": -0.0005984428963081712
           },
           "latest_weights": {
-            "SPY": 0.2638400215944007,
-            "QQQ": 0.2631953230846543,
-            "GLD": 0.2593760579931719,
-            "TLT": 0.21358859732777324
+            "SPY": 0.24792207251958148,
+            "QQQ": 0.2660763250202577,
+            "GLD": 0.2791117523286795,
+            "TLT": 0.20688985013148128
           }
         },
         "momentum": {
@@ -270,24 +270,24 @@
             }
           },
           "metrics": {
-            "final_wealth": 1.6755421077380506,
-            "cumulative_return": 0.6755421077380506,
-            "cumulative_log_wealth": 0.5161367593256042,
-            "annualized_return": 0.08620164460263502,
-            "sharpe": 0.614109704601943,
-            "max_drawdown": 0.40781242326394695,
-            "avg_turnover": 0.12381920920274284,
-            "cost_drag": 0.09738380803795724,
-            "hit_rate": 0.54354736172918,
-            "high_vol_avg_return": -0.00014347752527969722,
-            "low_vol_avg_return": 0.0008818185211378948,
-            "regret_vs_bcrp": 0.2339929790281864
+            "final_wealth": 1.73719274865444,
+            "cumulative_return": 0.7371927486544401,
+            "cumulative_log_wealth": 0.5522704475128067,
+            "annualized_return": 0.09177605081607676,
+            "sharpe": 0.6459591100992441,
+            "max_drawdown": 0.4271943429182211,
+            "avg_turnover": 0.12131751978658474,
+            "cost_drag": 0.0961441344308684,
+            "hit_rate": 0.5451104100946372,
+            "high_vol_avg_return": -6.202050492554703e-05,
+            "low_vol_avg_return": 0.0008430765966380711,
+            "regret_vs_bcrp": 0.17596151382333103
           },
           "latest_weights": {
-            "SPY": 0.0,
-            "QQQ": 0.0,
-            "GLD": 0.5,
-            "TLT": 0.5
+            "SPY": 0.5,
+            "QQQ": 0.5,
+            "GLD": 0.0,
+            "TLT": 0.0
           }
         },
         "mean_reversion": {
@@ -304,136 +304,24 @@
             }
           },
           "metrics": {
-            "final_wealth": 2.4074156734314838,
-            "cumulative_return": 1.4074156734314838,
-            "cumulative_log_wealth": 0.878553837464645,
-            "annualized_return": 0.15113376667548417,
-            "sharpe": 0.828639193166293,
-            "max_drawdown": 0.3041088012212386,
-            "avg_turnover": 0.17684153056119026,
-            "cost_drag": 0.13908586378637616,
-            "hit_rate": 0.5460902733630006,
-            "high_vol_avg_return": 0.0006610560482002845,
-            "low_vol_avg_return": 0.0006036965399418521,
-            "regret_vs_bcrp": -0.1284240991108544
+            "final_wealth": 2.3085574239403988,
+            "cumulative_return": 1.3085574239403988,
+            "cumulative_log_wealth": 0.8366228376567846,
+            "annualized_return": 0.142267261995076,
+            "sharpe": 0.7900300930543637,
+            "max_drawdown": 0.3068868705883596,
+            "avg_turnover": 0.17363748893497263,
+            "cost_drag": 0.13760770998096583,
+            "hit_rate": 0.5425867507886435,
+            "high_vol_avg_return": 0.0005826390335703686,
+            "low_vol_avg_return": 0.0006188007075022861,
+            "regret_vs_bcrp": -0.10839087632064681
           },
           "latest_weights": {
             "SPY": 0.0,
-            "QQQ": 0.5,
+            "QQQ": 0.0,
             "GLD": 0.5,
-            "TLT": 0.0
-          }
-        }
-      }
-    },
-    "ml_extension": {
-      "track_key": "ml_extension",
-      "track_name": "Industry Extension",
-      "primary_metric": "annualized_return",
-      "leader": "ridge_alpha",
-      "benchmark": null,
-      "regime_method": null,
-      "strategies": {
-        "ridge_alpha": {
-          "definition": {
-            "key": "ridge_alpha",
-            "name": "Rolling Ridge Alpha",
-            "family": "Statistical Baseline",
-            "description": "Cross-sectional ridge regression over transparent handcrafted features.",
-            "complexity": "Refit every K days",
-            "theory": "Industry-style linear alpha baseline with strong interpretability.",
-            "parameters": {
-              "alpha": 18.0,
-              "train_window": 504
-            }
-          },
-          "metrics": {
-            "final_wealth": 1.5919989047138285,
-            "cumulative_return": 0.5919989047138285,
-            "cumulative_log_wealth": 0.4649903994281283,
-            "annualized_return": 0.11584749433633168,
-            "sharpe": 0.7317045698818428,
-            "max_drawdown": 0.2970369674334987,
-            "avg_turnover": 0.1561365231133344,
-            "cost_drag": 0.08345497160407724,
-            "hit_rate": 0.5453695042095417,
-            "high_vol_avg_return": 4.0671266520546895e-05,
-            "low_vol_avg_return": 0.0009683812433446064,
-            "regret_vs_bcrp": 0.0
-          },
-          "latest_weights": {
-            "SPY": 0.42547216596869086,
-            "QQQ": 0.006339706735621948,
-            "GLD": 0.5422491718225745,
-            "TLT": 0.025938955473112757
-          }
-        },
-        "attention_alpha": {
-          "definition": {
-            "key": "attention_alpha",
-            "name": "Attention Sequence Alpha",
-            "family": "Transformer Extension",
-            "description": "Lightweight attention forecaster over recent feature sequences.",
-            "complexity": "Refit every K days",
-            "theory": "Transformer-style sequence model extension inspired by modern quant research.",
-            "parameters": {
-              "hidden_size": 8,
-              "sequence_length": 20
-            }
-          },
-          "metrics": {
-            "final_wealth": 1.4673598231841973,
-            "cumulative_return": 0.46735982318419733,
-            "cumulative_log_wealth": 0.383464747329224,
-            "annualized_return": 0.09460744987712322,
-            "sharpe": 0.616584924658027,
-            "max_drawdown": 0.2937126563789656,
-            "avg_turnover": 0.1363194575849634,
-            "cost_drag": 0.07286275007916293,
-            "hit_rate": 0.5285313376987839,
-            "high_vol_avg_return": 0.00012690692251363458,
-            "low_vol_avg_return": 0.0007214197090250255,
-            "regret_vs_bcrp": 0.0
-          },
-          "latest_weights": {
-            "SPY": 0.051412431063158126,
-            "QQQ": 0.4599862687719674,
-            "GLD": 0.007754060225056428,
-            "TLT": 0.4808472399398181
-          }
-        },
-        "blend_alpha": {
-          "definition": {
-            "key": "blend_alpha",
-            "name": "Blended Alpha Portfolio",
-            "family": "Industry Extension",
-            "description": "Blend statistical and attention signals, then pass them through deterministic optimization.",
-            "complexity": "Refit every K days",
-            "theory": "Matches the research pattern used by many quant firms: alpha model plus optimizer plus risk control.",
-            "parameters": {
-              "blend": "50/50",
-              "risk_aversion": 8.0
-            }
-          },
-          "metrics": {
-            "final_wealth": 1.5110900943326226,
-            "cumulative_return": 0.5110900943326226,
-            "cumulative_log_wealth": 0.4128313071468325,
-            "annualized_return": 0.1022113853453468,
-            "sharpe": 0.6524777364172277,
-            "max_drawdown": 0.31380632821168897,
-            "avg_turnover": 0.14410990850674704,
-            "cost_drag": 0.07702674609685631,
-            "hit_rate": 0.5304022450888681,
-            "high_vol_avg_return": 0.00013782094998420616,
-            "low_vol_avg_return": 0.0007686721001988037,
-            "regret_vs_bcrp": 0.0
-          },
-          "latest_weights": {
-            "SPY": 0.18921079084088582,
-            "QQQ": 0.25588629047362194,
-            "GLD": 0.17757591927383212,
-            "TLT": 0.37732699941166026
+            "TLT": 0.5
           }
         }
       }
