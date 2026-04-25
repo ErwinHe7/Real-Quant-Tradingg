@@ -1,0 +1,19 @@
+# Live trading authorization file.
+#
+# IMPORTANT: Only a human operator may create or modify this file.
+# The agent is never authorized to set authorized_at or revoked: false.
+# See docs/RUNBOOK.md for the authorization procedure.
+#
+# Copy this to live_authorization.yaml and fill in the values.
+# The file is then hashed and the hash recorded in auth_hashes.jsonl
+# by running: python -m live.tools.authorize
+
+authorized_at: "YYYY-MM-DDTHH:MM:SSZ"
+authorized_by: "<your name>"
+strategy: "<strategy_id e.g. ons>"
+universe: "<universe_id e.g. ETF_SECTOR_11>"
+max_gross_notional_usd: 1000
+max_per_name_usd: 200
+trading_days: ["mon", "tue", "wed", "thu", "fri"]
+expires_at: "YYYY-MM-DDTHH:MM:SSZ"  # max 30 days from authorized_at
+revoked: false
