@@ -360,11 +360,15 @@ def simulate_online_strategy(
   records: list[dict[str, object]] = []
   post_return_weights: np.ndarray | None = None
   cost_rate = transaction_cost_bps / 10_000.0
-  history: list[np.ndarray] = []
-  latest_weights = np.full(len(symbols), 1.0 / len(symbols))
+  # Pre-allocate history buffer to avoid O(T^2) np.asarray(list) allocation
+  n_steps = len(gross_returns)
+  n_assets = len(symbols)
+  history_buf = np.empty((n_steps, n_assets), dtype=float)
+  history_len = 0
+  latest_weights = np.full(n_assets, 1.0 / n_assets)
 
   for date, gross_vector in zip(gross_returns.index, gross_returns.to_numpy(dtype=float), strict=False):
-    history_array = np.asarray(history)
+    history_array = history_buf[:history_len]  # view, no copy
     target_weights = normalize_weights(strategy.allocate(history_array))
     if post_return_weights is None:
       turnover = 0.0
@@ -394,7 +398,8 @@ def simulate_online_strategy(
     post_return_weights = normalize_weights(target_weights * gross_vector)
     latest_weights = target_weights
     strategy.update(target_weights, gross_vector)
-    history.append(gross_vector)
+    history_buf[history_len] = gross_vector
+    history_len += 1
 
   daily_frame = pd.DataFrame(records)
   metrics = compute_metrics(daily_frame, np.asarray(equity_curve), benchmark_log_wealth=benchmark_log_wealth)
