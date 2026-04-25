@@ -9,9 +9,6 @@ lerna-debug.log*
 
 node_modules
 dist
-artifacts/research
-research_harness/__pycache__
-*.pyc
 dist-ssr
 *.local
 
@@ -25,3 +22,37 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Data cache (large binary files; rebuild with: rm -rf data/ && python -m research_harness.run)
+data/cache/
+
+# Live state — persisted runtime files (kill switch, positions, sessions)
+# Keep these local; do NOT commit live_authorization.yaml if it contains real caps
+live/state/KILL
+live/state/paper/
+live/state/sessions/
+live/state/incidents/
+live/state/heartbeat.json
+live/state/oms_state.json
+live/state/drawdown.json
+live/state/equity_compare.json
+live/state/live_authorization.yaml
+# auth_hashes.jsonl IS committed — it is append-only and not a secret
+# kill_switch_audit.jsonl IS committed — audit trail
+
+# Research artifacts (reproducible; exclude large binary plots but keep reports)
+artifacts/research/diagnostics/
+artifacts/research/selected_configs/
+artifacts/research/phase3_results.json
+artifacts/research/phase7.prof
+artifacts/research/phase7_after.prof
+
+# Claude internal
+.claude/worktrees/
